@@ -14,4 +14,11 @@
    ;; (println (take 10 input) " | pos: " pointer " is increased to " (+ pointer (nth input pointer)) )
     (recur (assoc input pointer (inc (nth input pointer))) (nextPointer input pointer) (inc my-count))))
 
-(parse my-input 0 0)
+(defn parse2
+  [input pointer my-count]
+  (if (= pointer -1)
+    (println my-count)
+    (recur (assoc input pointer (inc (nth input pointer))) (nextPointer input pointer) (inc my-count))))
+
+
+(parse my-input2 0 0)
